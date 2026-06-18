@@ -28,20 +28,27 @@ defineProps({
   color: white;
 }
 
+/* SOLO UN HOVER (CORRECTO) */
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(255, 140, 0, 0.5);
+  box-shadow: 0 15px 30px rgba(255, 165, 0, 0.4);
 }
 
 .image-container {
-  height: 220px;
+  height: 260px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  padding: 10px;
 }
 
+/* FIX PRINCIPAL (NO PERSONAJES CORTADOS) */
 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .name {

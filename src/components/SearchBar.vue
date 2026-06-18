@@ -5,9 +5,8 @@
       label="🔍 Buscar personaje"
       outlined
       dense
-      clearable
-      debounce="300"
-      @update:model-value="emitSearch"
+      debounce="500"
+      @update:model-value="onSearch"
     />
   </div>
 </template>
@@ -18,7 +17,7 @@ import { ref } from 'vue'
 const emit = defineEmits(['search'])
 const text = ref('')
 
-const emitSearch = (val) => {
+const onSearch = (val) => {
   emit('search', val || '')
 }
 </script>
@@ -26,6 +25,11 @@ const emitSearch = (val) => {
 <style scoped>
 .search-box {
   max-width: 500px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 25px auto;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 8px;
+  border: 1px solid rgba(255, 165, 0, 0.3);
 }
 </style>
